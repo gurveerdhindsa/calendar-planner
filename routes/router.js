@@ -12,6 +12,15 @@ router.get('/', function(req, res, next) {
   });
 });
 
+/* GET SINGLE CALENDAR EVENT BY ID */
+router.get('/:id', function(req, res, next) {
+    Event.findById(req.params.id, function(err, post) {
+        if (err)
+            return next(err);
+        res.json(post);
+    })
+})
+
 /* CREATE CALENDAR EVENT */
 router.post('/', function(req, res, next) {
     Event.create(req.body, function(err, post) {
@@ -23,7 +32,7 @@ router.post('/', function(req, res, next) {
 
 /* DELETE CALENDAR EVENT */
 router.post('/:id', function(req, res, next) {
-    Event.create(req.params.id, req.body, function(err, post) {
+    Event.findByIdAndDelete(req.params.id, req.body, function(err, post) {
         if (err)
             return next(err);
         res.json(post);
