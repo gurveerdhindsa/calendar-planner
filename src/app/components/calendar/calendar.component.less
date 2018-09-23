@@ -45,13 +45,46 @@
             }
 
             .calendar-events--log {
+                overflow-y:scroll;
+
                 .calendar-events--empty {
                     font-size: 1vw;
                     color: #a0a0a0;
                     margin-left: 20px;
                 }
-            }
 
+                .calendar-events--item {
+                    display: block;
+                    overflow-y:scroll;
+                    width: 19vw;
+                    margin: 0 auto;
+                    height: 6vw;
+                    margin-bottom: 10px;
+                    background-color: #676767;
+                    border-radius: 5px;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+                    .calendar-item {
+                        display: block;
+                        margin-left: 5%;
+                    }
+
+                    .title {
+                        font-size: 2vw;
+                        color: #d7d7d7;
+
+                    }
+
+                    .time {
+                        font-size: 1vw;
+                        color: #c6c6c6;
+                    }
+
+                    .description {
+                        font-size: 1vw;
+                    }
+                }
+            }
         }
 
         .calendar-picker {
@@ -124,10 +157,14 @@
                         }
 
                         .calendar-picker--day:hover {
-                            color: #b2efef;
+                            color: #e5f7f7;
                         }
 
                         .calendar-picker--day.active {
+                            color: white;
+                        }
+
+                        .calendar-picker--day.filled {
                             color: #ffcccc;
                         }
                     }

@@ -10,6 +10,7 @@ import { MONTHS_OF_YEAR, DAYS_OF_WEEK, MAX_CALENDAR_SLOTS } from '../../constant
 export class CalendarComponent implements OnInit {
 
   events: any;
+  dayEvents = new Array();
   selectedDate: number
   isEventFound: boolean
 
@@ -23,9 +24,6 @@ export class CalendarComponent implements OnInit {
   ngOnInit() {
     this.generateCalendarDays();
     this.getCalendarEvents();
-
-    //Set the default selected date as today's date
-    this.dateSelected(new Date().getDate());
   }
 
   generateCalendarDays() {
@@ -69,22 +67,29 @@ export class CalendarComponent implements OnInit {
     this.selectedDate = date;
     this.calendarService.setSelectedDate(date);
 
+    //Clear the array
+    this.dayEvents = [];
+
+    console.log(this.events);
 
 
+    for (var i = 0; i < this.events.length; i++) {
+        var obj = this.events[i];
 
-
+        if (obj.day == this.selectedDate) {
+            this.dayEvents.push(obj);
+        }
+    }
   }
 
+  isEventForDate(date) {
+    for (var i = 0; i < this.events.length; i++) {
+        var obj = this.events[i];
 
-
-  findEventForDay(date) {
-  /*
-  TODO:
-  -get selected date
-  -get events for date from DB OR traverse events array (which pulls from DB on init)
-  -if null -> output null, else -> output the event
-  */
-    //return false;
+        if (obj.day == date) {
+            return true;
+        }
+    }
   }
 
 
@@ -92,6 +97,7 @@ export class CalendarComponent implements OnInit {
     this.calendarService.getAllEvents()
         .then((res) => {
             this.events = res;
+            this.dateSelected(new Date().getDate());
         }, (err) => {
         console.log(err);
     });
