@@ -26,7 +26,6 @@ export class CalendarCreateComponent implements OnInit {
   saveEvent() {
     this.event['day'] = this.calendarService.selectedDate;
     this.calendarService.saveEvent(this.event);
-
     this.router.navigate(['calendar']);
   }
 

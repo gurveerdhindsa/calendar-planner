@@ -63,15 +63,10 @@ export class CalendarComponent implements OnInit {
   }
 
   dateSelected(date) {
-    //Update the selected date
     this.selectedDate = date;
     this.calendarService.setSelectedDate(date);
 
-    //Clear the array
     this.dayEvents = [];
-
-    console.log(this.events);
-
 
     for (var i = 0; i < this.events.length; i++) {
         var obj = this.events[i];
@@ -102,5 +97,4 @@ export class CalendarComponent implements OnInit {
         console.log(err);
     });
   }
-
 }

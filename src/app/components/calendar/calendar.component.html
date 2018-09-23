@@ -1,22 +1,16 @@
 <div class="container-fluid">
   <h1>gu-calendar</h1>
-
   <div class="calendar">
-
-    <!--Event log-->
     <div class="calendar-events col-2">
       <div class="calendar-events--header">
         <h1 class="calendar-events--title col-8">Events</h1>
         <i [routerLink]="['/create-event']" class="calendar-events--plus fas fa-plus-circle col-2" [ngClass]="{'not-clickable': !selectedDate>0}"></i>
       </div>
       <hr/>
-
       <h2 class="calendar-events--selected">{{ getCurrentMonth() }} {{ selectedDate }}, {{ getCurrentYear() }}</h2>
-
       <div class="calendar-events--log">
         <p class="calendar-events--empty" *ngIf="!selectedDate>0">Please select a date</p>
         <p class="calendar-events--empty" *ngIf="selectedDate>0 && !dayEvents">No events found</p>
-
         <div class="calendar-events--item" *ngFor="let event of dayEvents">
           <span class="calendar-item title">{{ event.title }}</span>
           <span class="calendar-item time">{{ event.time }}</span>
@@ -24,8 +18,6 @@
         </div>
       </div>
     </div>
-
-    <!--Calendar picker-->
     <div class="calendar-picker col-8">
       <div class="calendar-picker--header">
         <h1 class="calendar-picker--month">{{getCurrentMonth()}}</h1>
@@ -37,7 +29,6 @@
           </ul>
         </div>
       </div>
-
         <div class="calendar-picker--days">
           <table class="calendar-picker--table">
             <tbody>
