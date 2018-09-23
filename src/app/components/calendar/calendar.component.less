@@ -7,7 +7,7 @@
 
         .calendar-events {
             width: 20vw;
-            height: 40vw;
+            height: 43vw;
             margin-right: 50px;
             background-color: #424242;
             border-radius: 5px;
@@ -19,19 +19,29 @@
                 .calendar-events--title {
                     margin-left: 20px;
                     font-size: 2vw;
-                    color: #00a3cc;
+                    color: #00cccc;
                 }
 
                 .calendar-events--plus {
                     font-size: 1.5vw;
                     margin-top: 27px;
                     margin-left: 50%;
-                    color: #00617a
+                    color: #606060;
                 }
 
                 .calendar-events--plus:hover {
-                    color: #00a3cc;
+                    color: #00cccc;
                 }
+
+                .not-clickable {
+                    pointer-events: none;
+                }
+            }
+
+            .calendar-events--selected {
+                margin-left: 20px;
+                font-size: 1.5vw;
+                color: #007a7a;
             }
 
             .calendar-events--log {
@@ -45,11 +55,84 @@
         }
 
         .calendar-picker {
-        width: 60vw;
-        height: 40vw;
-        background-color: #424242;
-        border-radius: 5px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            width: 60vw;
+            height: 43vw;
+            background-color: #424242;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+
+            .calendar-picker--header {
+                display: block;
+
+                .calendar-picker--month {
+                    display: flex;
+                    justify-content: center;
+                    font-size: 1.5vw;
+                    color: #00cccc;
+                }
+
+                .calendar-picker--weekday {
+                    ul {
+                        display: flex;
+                        justify-content: center;
+                        list-style: none;
+
+                        li {
+                            font-size: 1vw;
+                            margin: 1% 4% 0px 4%;
+                            color: #c6c6c6;
+                        }
+                    }
+                }
+             }
+
+
+            .calendar-picker--days {
+                .calendar-picker--table {
+                    width: 100%;
+                    max-width: 100%;
+
+                    .calendar-picker--week {
+                        line-height: 5px;
+
+
+                        .calendar-picker--day {
+                            font-size: 3.2vw;
+                            padding-top: 2%;
+                            padding-left: 0.6em;
+                            padding-right: 0.6em;
+                            padding-bottom: 0%;
+                            text-align: center;
+                            color: #00b7b7;
+
+                            .calendar-picker--text {
+                                color: #3b3b3b;
+                                vertical-align: top;
+                                font-family: 'Roboto Condensed', sans-serif;
+                                font-size: 0.5em;
+                            }
+                        }
+
+                        .calendar-picker--day:nth-child(7n) {
+                            color: #006666;
+                            padding-right: 0.1em;
+                        }
+
+                        .calendar-picker--day:nth-child(7n+1) {
+                            color: #006666;
+                            padding-left: 0.1em;
+                        }
+
+                        .calendar-picker--day:hover {
+                            color: #b2efef;
+                        }
+
+                        .calendar-picker--day.active {
+                            color: #ffcccc;
+                        }
+                    }
+                }
+            }
         }
     }
 }

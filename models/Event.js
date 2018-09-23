@@ -1,9 +1,9 @@
 var mongoose = require('mongoose');
 
 var EventSchema = new mongoose.Schema({
+  day: String,
   title: String,
-  id: String,
-  time: { type: Date },
+  time: String,
   description: String
 });
 

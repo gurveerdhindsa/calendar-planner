@@ -7,6 +7,8 @@ import { HttpModule } from '@angular/http';
 @Injectable()
 export class CalendarService {
 
+    selectedDate: number;
+
     constructor(private http: Http) {
     }
 
@@ -57,5 +59,7 @@ export class CalendarService {
          });
        }
 
-
+     setSelectedDate(date) {
+        this.selectedDate = date;
+     }
 }

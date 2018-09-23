@@ -8,16 +8,19 @@ import { CalendarService } from './services/calendar.service';
 
 import { AppComponent } from './app.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
+import { CalendarCreateComponent } from './components/calendar-create/calendar-create.component';
 
 const ROUTES = [
     { path: '', redirectTo: 'calendar', pathMatch: 'full' },
-    { path: 'calendar', component: CalendarComponent}
+    { path: 'calendar', component: CalendarComponent},
+    { path: 'create-event', component: CalendarCreateComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CalendarComponent
+    CalendarComponent,
+    CalendarCreateComponent
   ],
   imports: [
     BrowserModule,

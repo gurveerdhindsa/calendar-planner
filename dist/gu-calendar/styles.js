@@ -1,13 +1,13 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["styles"],{
 
-/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css":
-/*!**********************************************************************************************!*\
-  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./src/styles.css ***!
-  \**********************************************************************************************/
+/***/ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/less-loader/dist/cjs.js??ref--16-3!./src/styles.less":
+/*!*************************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader!./node_modules/postcss-loader/lib??embedded!./node_modules/less-loader/dist/cjs.js??ref--16-3!./src/styles.less ***!
+  \*************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\nbody {\n    background-color: black;\n}"
+module.exports = "/* You can add global styles to this file, and also import other style files */\nbody {\n  background-color: #212121;\n  font-family: 'Roboto Condensed', sans-serif;\n}\nhr {\n  -moz-border-bottom-colors: none;\n  -moz-border-image: none;\n  -moz-border-left-colors: none;\n  -moz-border-right-colors: none;\n  -moz-border-top-colors: none;\n  border-color: #303030;\n  border-style: solid none;\n  border-width: 1px 0;\n  margin: 5px 10px 10px 10px;\n}\n"
 
 /***/ }),
 
@@ -502,15 +502,15 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/styles.css":
-/*!************************!*\
-  !*** ./src/styles.css ***!
-  \************************/
+/***/ "./src/styles.less":
+/*!*************************!*\
+  !*** ./src/styles.less ***!
+  \*************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!./styles.css */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./src/styles.css");
+var content = __webpack_require__(/*! !../node_modules/raw-loader!../node_modules/postcss-loader/lib??embedded!../node_modules/less-loader/dist/cjs.js??ref--16-3!./styles.less */ "./node_modules/raw-loader/index.js!./node_modules/postcss-loader/lib/index.js??embedded!./node_modules/less-loader/dist/cjs.js??ref--16-3!./src/styles.less");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -533,13 +533,13 @@ if(false) {}
 /***/ }),
 
 /***/ 2:
-/*!******************************!*\
-  !*** multi ./src/styles.css ***!
-  \******************************/
+/*!*******************************!*\
+  !*** multi ./src/styles.less ***!
+  \*******************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /Users/gurveerdhindsa/IdeaProjects/gu-calendar/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /Users/gurveerdhindsa/IdeaProjects/gu-calendar/src/styles.less */"./src/styles.less");
 
 
 /***/ })

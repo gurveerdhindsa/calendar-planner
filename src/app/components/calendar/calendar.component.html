@@ -1,30 +1,55 @@
 <div class="container-fluid">
-
-
-
   <h1>gu-calendar</h1>
 
   <div class="calendar">
 
+    <!--Event log-->
     <div class="calendar-events col-2">
-
       <div class="calendar-events--header">
         <h1 class="calendar-events--title col-8">Events</h1>
-        <i class="calendar-events--plus fas fa-plus-circle col-2"></i>
+        <i [routerLink]="['/create-event']" class="calendar-events--plus fas fa-plus-circle col-2" [ngClass]="{'not-clickable': !selectedDate>0}"></i>
       </div>
-      <hr>
+      <hr/>
+
+      <h2 class="calendar-events--selected">{{ getCurrentMonth() }} {{ selectedDate }}, {{ getCurrentYear() }}</h2>
 
       <div class="calendar-events--log">
-        <p class="calendar-events--empty" *ngIf="!isEventFound()">No events found</p>
+        <p class="calendar-events--empty" *ngIf="!selectedDate>0">Please select a date</p>
+        <p class="calendar-events--empty" *ngIf="selectedDate>0 && !isEventFound">No events found</p>
+      </div>
+    </div>
 
-
+    <!--Calendar picker-->
+    <div class="calendar-picker col-8">
+      <div class="calendar-picker--header">
+        <h1 class="calendar-picker--month">{{getCurrentMonth()}}</h1>
+        <div class="calendar-picker--weekday">
+          <ul class="list-inline">
+            <li *ngFor="let dayOfWeek of getDaysOfWeek()">
+              {{dayOfWeek}}
+            </li>
+          </ul>
+        </div>
       </div>
 
-    </div>
-
-    <div class="calendar-picker col-8">
-
+        <div class="calendar-picker--days">
+          <table class="calendar-picker--table">
+            <tbody>
+              <tr class="calendar-picker--week" *ngFor="let days of dates">
+                <td class="calendar-picker--day" *ngFor="let day of days" [ngClass]="{'active': day == selectedDate}">
+                  <span class="fa-stack fa-xs" *ngIf="day != 0" (click)="dateSelected(day)">
+                    <i class="fas fa-circle"></i>
+                    <span class="fa fa-stack-1x">
+                      <span class="calendar-picker--text">
+                        {{ day }}
+                      </span>
+                    </span>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
     </div>
   </div>
-
 </div>

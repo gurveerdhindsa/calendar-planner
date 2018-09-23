@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <h1 class="create-event--header">Add event</h1>
+  <h2 class="create-event--subheader">{{ getCurrentMonth() }} , {{ date }}</h2>
+  <div class="row">
+    <div class="col-md-6">
+      <form (ngSubmit)="saveEvent()" #eventForm="ngForm">
+        <div class="form-group">
+          <label class="create-event--formheader" for="title">Title</label>
+          <input type="text" class="form-control" [(ngModel)]="event.title" name="title" required>
+        </div>
+        <div class="form-group">
+          <label class="create-event--formheader" for="time">Time</label>
+          <input type="text" class="form-control" [(ngModel)]="event.time" name="time" required>
+        </div>
+        <div class="form-group">
+          <label class="create-event--formheader" for="description">Description</label>
+          <textarea class="form-control input-lg" rows="10" id="message" required="true" [(ngModel)]="event.description" name="description" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" [disabled]="!eventForm.form.valid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
