@@ -1,7 +1,8 @@
 ## Portfolio
 Monthly planning calendar
 
-![alt text](https://imgur.com/a/gkag5U8)
+![alt text](https://raw.githubusercontent.com/gurveerdhindsa/gu-calendar/src/assets/images/gu-calendar.png)
+    
 
 ## Developing
 ```
