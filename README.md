@@ -1,7 +1,7 @@
 ## Portfolio
 Monthly planning calendar
 
-![alt text](https://imgur.com/a/gkag5U8)
+![alt text](https://ibb.co/c36AU9)
 
 ## Developing
 ```
