@@ -26,6 +26,7 @@ npm start
 ```
 > Normal development
 
+
 ##  Tech stack
 - MEAN (MongoDB, Express.js, Angular, Node.js)
 - TypeScript
