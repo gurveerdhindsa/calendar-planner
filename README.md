@@ -1,6 +1,6 @@
 ![alt text](screenshots/gu-calendar.png "gu-calendar")
 
-# gu-calendar
+# calendar-planner
 
 > Monthly planning calendar
 
@@ -11,7 +11,7 @@ npm install
 ```
 
 ### Clone
-- Clone this repo to your local machine using `https://github.com/gurveerdhindsa/gu-calendar.git`
+- Clone this repo to your local machine using `https://github.com/gurveerdhindsa/calendar-planner.git`
 
 ### Development
 ```
